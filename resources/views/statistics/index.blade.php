@@ -10,9 +10,6 @@
     <!--GOOGLE CHART API-->
 </head>
 <body>
-<?php
-$user = Auth::user();
-?>
 
 <!--HEADER-->
 @include('includes.header_nav_bar.header_nav')
@@ -33,11 +30,7 @@ $user = Auth::user();
             <section id="sidebar">
                 <section>
                     <h3>Statistics</h3>
-                    <!--CHARTS API-->
-                    @include('includes.charts_api.charts_api_js')
-                    <!--CHARTS API-->
-                    <div id="piechart"></div>
-                    <p>This is live data...</p>
+
 
                     <footer>
                         <ul class="actions">

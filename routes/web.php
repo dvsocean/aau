@@ -29,7 +29,7 @@ Route::get('/onboarding', function(){
     if(Auth::check()) {
         return view('onboarding.index');
     } else {
-        return redirect('welcome');
+        return redirect('home');
     }
 })->name('onboarding');
 
@@ -38,7 +38,7 @@ Route::get('/your_ideas', function(){
     if(Auth::check()) {
         return view('idea_page.index');
     } else {
-        return redirect('welcome');
+        return redirect('home');
     }
 })->name('your_ideas');
 
@@ -50,11 +50,26 @@ Route::get('/statistics', function(){
     if(Auth::check()) {
         return view('statistics.index');
     } else {
-        return redirect('welcome');
+        return redirect('home');
     }
 })->name('statistics');
 
-//Register new user
+//Register new user FOR ADMIN ONLY!!
 Route::get('/new_grad', function(){
-    return view('auth.register');
-});
+//    if(Auth::check() and Auth::user()->administrator) {
+        return view('auth.register');
+//    } else {
+//        Session::flash('error_message', 'You must be an administrator to view this page.');
+//        return redirect('home');
+//    }
+})->name('new_grad');
+
+//Admin control panel (MUST BE ADMIN)
+Route::get('/administrators', function(){
+    if(Auth::check() and Auth::user()->administrator) {
+        return view('administrators.index');
+    } else {
+        Session::flash('error_message', 'You must be an administrator to view this page.');
+        return redirect('home');
+    }
+})->name('admin');

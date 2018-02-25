@@ -10,6 +10,7 @@ class Idea extends Model
         'user_id',
         'file',
         'size',
-        'type'
+        'type',
+        'path'
     ];
 }

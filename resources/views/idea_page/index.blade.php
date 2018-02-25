@@ -140,7 +140,7 @@
                     </div>
                     <h3>Beautiful minds</h3>
                     <p>
-                        Ideas that have been shared, most have been implemented so help us grow. The best way
+                        Ideas have been shared, most have been implemented so help us grow. The best way
                         through American Airlines is not to go through it but to grow through it.
                     </p>
                     <footer>

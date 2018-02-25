@@ -20,6 +20,7 @@ class CreateIdeasTable extends Migration
             $table->string('file');
             $table->integer('size');
             $table->string('type');
+            $table->string('path')->nullable();
         });
     }
 
