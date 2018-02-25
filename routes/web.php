@@ -28,3 +28,16 @@ Route::get('/home', function(){
 Route::get('/onboarding', function(){
     return view('onboarding.index');
 })->name('onboarding');
+
+//Route to idea page
+Route::get('/your_ideas', function(){
+    return view('idea_page.index');
+})->name('your_ideas');
+
+//Route to idea controller
+Route::post('idea_storage', 'IdeaController@newIdea')->name('idea_storage');
+
+//Stats page
+Route::get('/statistics', function(){
+    return view('statistics.index');
+})->name('statistics');

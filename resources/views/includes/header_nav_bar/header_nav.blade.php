@@ -5,6 +5,7 @@
 
             @if (Route::has('login'))
                 @auth
+                <li><a href="{{route('your_ideas')}}">Upload an idea</a></li>
                 <li>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
@@ -54,7 +55,7 @@
                             </ul>
 
                             <li><a href=""><b>About AA</b></a></li>
-                        @else
+                            @else
                             <li><a href="{{route('login')}}">Login</a></li>
                         @endif
                     </ul>

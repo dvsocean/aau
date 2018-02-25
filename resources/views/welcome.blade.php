@@ -2,12 +2,12 @@
 <html>
 <head>
     <title>AAUniversity</title>
-    @include('includes.welcome_page.header')
+    @include('includes.site_wide_header.header')
 </head>
 <body>
 
 <!-- Header -->
-@include('includes.welcome_page.header_nav')
+@include('includes.header_nav_bar.header_nav')
 <!-- Header -->
 
 <!--BANNER-->
@@ -135,7 +135,7 @@
 </div>
 
 <!-- Footer -->
-@include('includes.welcome_page.footer')
+@include('includes.site_wide_footer.footer')
 <!-- Footer -->
 
 </body>
