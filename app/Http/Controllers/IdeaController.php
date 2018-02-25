@@ -17,11 +17,15 @@ class IdeaController extends Controller
         $type = $data->getClientOriginalExtension();
 
         if($type == 'jpg' || $type == 'jpeg' || $type == 'png' || $type == 'JPG' || $type == 'JPEG' || $type == 'PNG') {
+            $data->move('ideas/' . ucfirst(Auth::user()->name), $name);
+            Idea::create(['user_id' => Auth::user()->id, 'file' => $name, 'size' => $size, 'type' => $type]);
+            Session::flash('info_message', 'Ideas are awesome! Your files will be reviewed soon.');
+        } else if($type == 'docx' || $type == 'xlxs' || $type == 'txt' || $type == 'ppt' || $type == 'pdf') {
             $data->move('ideas/'. ucfirst(Auth::user()->name), $name);
             Idea::create(['user_id'=> Auth::user()->id, 'file'=> $name, 'size'=> $size, 'type'=> $type]);
             Session::flash('info_message', 'Ideas are awesome! Your files will be reviewed soon.');
         } else {
-            Session::flash('error_message', 'GIF, BITMAP, VECTORS, PSD and COREL files are not accepted.');
+            Session::flash('error_message', 'Programming, HTML and major Photoshop/Draw files not accepted.');
         }
     }
 }

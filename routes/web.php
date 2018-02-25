@@ -26,12 +26,20 @@ Route::get('/home', function(){
 
 //This route starts at the header_nav menu
 Route::get('/onboarding', function(){
-    return view('onboarding.index');
+    if(Auth::check()) {
+        return view('onboarding.index');
+    } else {
+        return redirect('welcome');
+    }
 })->name('onboarding');
 
 //Route to idea page
 Route::get('/your_ideas', function(){
-    return view('idea_page.index');
+    if(Auth::check()) {
+        return view('idea_page.index');
+    } else {
+        return redirect('welcome');
+    }
 })->name('your_ideas');
 
 //Route to idea controller
@@ -39,5 +47,9 @@ Route::post('idea_storage', 'IdeaController@newIdea')->name('idea_storage');
 
 //Stats page
 Route::get('/statistics', function(){
-    return view('statistics.index');
+    if(Auth::check()) {
+        return view('statistics.index');
+    } else {
+        return redirect('welcome');
+    }
 })->name('statistics');

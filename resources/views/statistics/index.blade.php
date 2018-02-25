@@ -5,8 +5,14 @@
     <!--HEADER-->
     @include('includes.site_wide_header.header')
     <!--HEADER-->
+    <!--GOOGLE CHART API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!--GOOGLE CHART API-->
 </head>
 <body>
+<?php
+$user = Auth::user();
+?>
 
 <!--HEADER-->
 @include('includes.header_nav_bar.header_nav')
@@ -17,6 +23,7 @@
     <header class="major">
         <h2>In our database today</h2>
         <p>Many came through American Airlines and left us their wisdom.</p>
+        @include('includes.message_includes.messages')
     </header>
     <div class="row 150%">
         <div class="4u 12u$(medium)">
@@ -24,8 +31,13 @@
             <!-- Sidebar -->
             <section id="sidebar">
                 <section>
-                    <h3>Magna Feugiat</h3>
-                    <p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit..</p>
+                    <h3>Statistics</h3>
+                    <!--CHARTS API-->
+                    @include('includes.charts_api.charts_api_js')
+                    <!--CHARTS API-->
+                    <div id="piechart"></div>
+                    <p>This is live data...</p>
+
                     <footer>
                         <ul class="actions">
                             <li><a href="#" class="button small alt">Learn More</a></li>
@@ -51,18 +63,27 @@
             <!-- Content -->
             <section id="content">
                 <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-                <h3>Dolore Amet Consequat</h3>
-                <p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at magna consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
-                <p>Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum porta cursus justo. Quisque ultricies lorem in ligula condimentum, et egestas turpis sagittis. Cras ac nunc urna. Nullam eget lobortis purus. Phasellus vitae tortor non est placerat tristique.</p>
-                <h3>Sed Magna Ornare</h3>
-                <p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus.</p>
+                <h3>People who are crazy enough to think they can change an industry are the ones who do.</h3>
                 <ul>
-                    <li>Faucibus orci lobortis ac adipiscing integer.</li>
-                    <li>Col accumsan arcu mi aliquet placerat.</li>
-                    <li>Lobortis vestibulum ut magna tempor massa nascetur.</li>
-                    <li>Blandit massa non blandit tempor interdum.</li>
-                    <li>Lacinia mattis arcu nascetur lobortis.</li>
+                    <li>Automated tests now display branch names</li>
+                    <li>Elements are now located with By objects</li>
+                    <li>List of acronyms has been established</li>
+                    <li>Onboarding process documented for ease of learning</li>
+                    <li>Automated tests built to run in parallel</li>
                 </ul>
+                <p class="pull-right">...and many others</p>
+            </section>
+
+            <br><br>
+
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <a href="#" class="image fit"><img src="{{asset('images/statistics_page/tryOrFail.jpg')}}" alt="" /></a>
+                        </div>
+                    </div>
+                </div>
             </section>
 
         </div>

@@ -3,12 +3,12 @@
 <head>
     <title>Upload an idea</title>
     <!--HEADER-->
-    @include('includes.site_wide_header.header')
-    <!--HEADER-->
+@include('includes.site_wide_header.header')
+<!--HEADER-->
 
     <!--DROPZONE FILES-->
-    @include('includes.dropzone.dropzone_js_css')
-    <!--DROPZONE FILES-->
+@include('includes.dropzone.dropzone_js_css')
+<!--DROPZONE FILES-->
 </head>
 <body>
 
@@ -24,8 +24,8 @@
         <p>We would love to see it and we will make sure that many people benefit from it.</p>
         <br>
         <!--MESSAGES-->
-        @include('includes.message_includes.messages')
-        <!--MESSAGES-->
+    @include('includes.message_includes.messages')
+    <!--MESSAGES-->
     </header>
     <div class="row 150%">
         <div class="8u 12u$(medium)">
@@ -40,12 +40,11 @@
                 </form>
 
                 <h3>Wheels are always turning..</h3>
-                    <p>
-                        and if metal sharpens metal we could also learn from each other. Submit documents and photographs
-                        so we can check them out and implement them. Many have helped improve this site and there are many
-                        more to come. We only accept documents and photos sorry, but you can always upload malicious files
-                        onto your own computer and see what happens. You super human programmer you.
-                    </p>
+                <p>
+                    and if metal sharpens metal we could also learn from each other. Submit documents and photographs
+                    so we can check them out and implement them. Many have helped improve this site and there are many
+                    more to come. We don't accept script or HTML files, only documents and photos.
+                </p>
 
                 <div class="table-wrapper">
                     <table>
@@ -72,6 +71,14 @@
                             </td>
                             <td>
                                 png
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Graphics Interchanges Format
+                            </td>
+                            <td>
+                                gif
                             </td>
                         </tr>
                         <tr>
@@ -106,6 +113,14 @@
                                 ppt
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                Portable Document Format
+                            </td>
+                            <td>
+                                pdf
+                            </td>
+                        </tr>
                     </table>
                 </div>
             </section>
@@ -125,9 +140,8 @@
                     </div>
                     <h3>Beautiful minds</h3>
                     <p>
-                        These are ideas that have been shared, most have been implemented so come out of
-                        your shell and help us grow. The best way through American Airlines is not to
-                        go through it but to grow through it.
+                        Ideas that have been shared, most have been implemented so help us grow. The best way
+                        through American Airlines is not to go through it but to grow through it.
                     </p>
                     <footer>
                         <ul class="actions">
