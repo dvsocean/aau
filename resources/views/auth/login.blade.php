@@ -44,7 +44,7 @@
 
 
 <!--ANIMATION-->
-<script src='assets/js/jquery.min.js'></script>
+{{--<script src='assets/js/jquery.min.js'></script>--}}
 <script  src="assets/js/index.js"></script>
 <!--ANIMATION-->
 @include('includes.login_page.footer')

@@ -6,7 +6,7 @@
     body {
         font-family: "Open Sans", sans-serif;
         height: 100vh;
-        background: url("images/aa_jet.jpg") 50% fixed;
+        background: url("images/welcome_page/aa_jet.jpg") 50% fixed;
         background-size: cover;
     }
 

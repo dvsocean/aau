@@ -53,3 +53,8 @@ Route::get('/statistics', function(){
         return redirect('welcome');
     }
 })->name('statistics');
+
+//Register new user
+Route::get('/new_grad', function(){
+    return view('auth.register');
+});

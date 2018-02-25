@@ -1,0 +1,22 @@
+so1216/13octd*siLax31smf
+In order to add bags to your PNR you need to make sure you create the trip through AA.com and then check in. 
+
+1. Sign into saber in the environment you created your PNR.
+2. Triple AAA into DFW to ticket as an agent.
+    * AAADFW (enter)
+    * SI5(enter)
+3. Search for the PNR you want to add bags to
+    * *RecordLocator
+4. Print the PNR 
+    * WJ*DFW shows the printers at the airport you are signed in at
+    * W*2A31CA3A######## to print at a the selected printer
+        * Ex. si45105104
+5. Enter I
+    * System will return I GD
+6. Enter in the bag tag information you want to add.
+    * G-Flight#/Date Departure city - LastName*BT/Six numbers
+7. Hit Enter
+8. Hit Enter
+9. If you want to change the values of the bags being added do so head scrolling to the applicable entry then hit enter.
+10. Hit Enter
+11. Enter in the amount for Cash to pay for the bags and hit enter. When you view the PNR you will see the bags added to the PNR.

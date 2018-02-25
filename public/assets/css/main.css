@@ -2628,18 +2628,18 @@
 
 /* Banner */
 
-	#banner {
-		background-attachment: fixed,							fixed;
-		background-image: url("images/aa_jet.png");
-		background-position: top left,						center center;
-		background-repeat: repeat,							no-repeat;
-		background-size: auto,							cover;
-		color: #d8dadb;
-		height: calc(100vh - 3.5em);
-		min-height: 35em;
-		position: relative;
-		text-align: center;
-	}
+#banner {
+	background-attachment: fixed,							fixed;
+	background-image: url("images/overlay.png"), url("../../images/welcome_page/aa_jet5.jpg");
+	background-position: top left,						center center;
+	background-repeat: repeat,							no-repeat;
+	background-size: auto,							cover;
+	color: #d8dadb;
+	height: calc(100vh - 3.5em);
+	min-height: 35em;
+	position: relative;
+	text-align: center;
+}
 
 		#banner h2, #banner h3, #banner h4, #banner h5, #banner h6, #banner strong, #banner b {
 			color: #ffffff;

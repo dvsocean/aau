@@ -19,11 +19,11 @@ class IdeaController extends Controller
         if($type == 'jpg' || $type == 'jpeg' || $type == 'png' || $type == 'JPG' || $type == 'JPEG' || $type == 'PNG') {
             $data->move('ideas/' . ucfirst(Auth::user()->name), $name);
             Idea::create(['user_id' => Auth::user()->id, 'file' => $name, 'size' => $size, 'type' => $type]);
-            Session::flash('info_message', 'Ideas are awesome! Your files will be reviewed soon.');
+            Session::flash('info_message', 'Your files will be reviewed soon. American Airlines will be in touch.');
         } else if($type == 'docx' || $type == 'xlxs' || $type == 'txt' || $type == 'ppt' || $type == 'pdf') {
             $data->move('ideas/'. ucfirst(Auth::user()->name), $name);
             Idea::create(['user_id'=> Auth::user()->id, 'file'=> $name, 'size'=> $size, 'type'=> $type]);
-            Session::flash('info_message', 'Ideas are awesome! Your files will be reviewed soon.');
+            Session::flash('info_message', 'Your files will be reviewed soon. American Airlines will be in touch.');
         } else {
             Session::flash('error_message', 'Programming, HTML and major Photoshop/Draw files not accepted.');
         }

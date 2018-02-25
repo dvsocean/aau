@@ -23,6 +23,7 @@ $user = Auth::user();
     <header class="major">
         <h2>In our database today</h2>
         <p>Many came through American Airlines and left us their wisdom.</p>
+        <br>
         @include('includes.message_includes.messages')
     </header>
     <div class="row 150%">
