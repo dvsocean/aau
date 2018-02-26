@@ -21,7 +21,7 @@
 <div id="main" class="container">
     <header class="major">
         <h2>Have an idea? Upload it here.</h2>
-        <p>We would love to see it and we will make sure that many people benefit from it.</p>
+        <p>We would love to see it and we will make sure that many benefit from it.</p>
         <br>
         <!--MESSAGES-->
     @include('includes.message_includes.messages')
@@ -34,9 +34,18 @@
             <section id="content">
                 <a href="#" class="image fit"><img src="images/pic08.jpg" alt="" /></a>
 
-                <h3>Drop your ideas here</h3>
+                <h3>Drop your files here</h3>
                 <form action="{{route('idea_storage')}}" id="my-awesome-dropzone" method="POST" class="dropzone">
                     {{csrf_field()}}
+                </form>
+
+                <h3>Drop your idea here</h3>
+                <form>
+                    <label>Title</label>
+                    <input type="text" name=""><br>
+
+                    <textarea col="5" rows="7"></textarea><br>
+                    <input type="" value="Submit" class="button small">
                 </form>
 
                 <h3>Wheels are always turning..</h3>
@@ -111,6 +120,14 @@
                             </td>
                             <td>
                                 ppt
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Power Point Document
+                            </td>
+                            <td>
+                                pptx
                             </td>
                         </tr>
                         <tr>
