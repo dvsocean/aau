@@ -15,7 +15,7 @@
 <?php
 use App\Idea;
 use Illuminate\Support\Facades\DB;
-$records = DB::table('ideas')->get();
+$records = Idea::paginate(10);
 ?>
 
 <!-- Main -->
@@ -23,6 +23,8 @@ $records = DB::table('ideas')->get();
     <header class="major">
         <h2>Administration</h2>
         <p><!--PLACEHOLDER--></p>
+        <br>
+        @include('includes.message_includes.messages')
     </header>
     <div class="row 150%">
         <div class="8u 12u$(medium)">
@@ -42,10 +44,13 @@ $records = DB::table('ideas')->get();
                                 <b>Name</b>
                             </td>
                             <td>
-                                <b>Size</b>
+                                <b>Byte size</b>
                             </td>
                             <td>
                                 <b>Type</b>
+                            </td>
+                            <td>
+                                <b>Action</b>
                             </td>
                         </thead>
                         @foreach($records as $record)
@@ -62,9 +67,16 @@ $records = DB::table('ideas')->get();
                                 <td>
                                     {{$record->type}}
                                 </td>
+                                <td>
+                                    <a href="{{url('/delete_file/'. $record->id)}}" class="btn btn-danger">Delete</a>
+                                </td>
                             </tr>
                         @endforeach
                     </table>
+                    <div class="text-center">
+                        <p>{{$records->links()}}</p>
+                    </div>
+
                 </div>
             </section>
 
@@ -74,56 +86,22 @@ $records = DB::table('ideas')->get();
             <!-- Sidebar -->
             <section id="sidebar">
                 <section>
-                    <h3>Control panel</h3>
-                    <a href="{{route('new_grad')}}" class="button special icon fa-male">New user</a>
-
-                </section>
-                <hr />
-                <section>
                     <a href="#" class="image fit"><img src="images/pic09.jpg" alt="" /></a>
-                    <h3>Statistics</h3>
+                    <h3>Storage</h3>
+                    <!--CHARTS API-->
+                @include('includes.charts_api.charts_api_js')
+                <!--CHARTS API-->
+                </section>
 
-                    <?php
-                    $jpg = Idea::where('type', 'jpg')->get(['type']);
-                    $docx = Idea::where('type', 'docx')->get(['type']);
-                    $txt = Idea::where('type', 'txt')->get(['type']);
-                    $png = Idea::where('type', 'png')->get(['type']);
-                    $jpeg = Idea::where('type', 'jpeg')->get(['type']);
-                    ?>
-
-                    <!--CONTAINER-->
-                    <div id="piechart"></div>
-                    <!--CONTAINER-->
-
-                    <!-- JS API-->
-                    <script type="text/javascript">
-                        google.charts.load('current', {'packages':['corechart']});
-                        google.charts.setOnLoadCallback(drawChart);
-                        function drawChart() {
-                            var data = google.visualization.arrayToDataTable([
-                                ['Task', 'Uploaded files'],
-                                ['JPG', <?php echo $jpg->count(); ?>],
-                                ['DOCX', <?php echo $docx->count(); ?>],
-                                ['TXT', <?php echo $txt->count(); ?>],
-                                ['PNG', <?php echo $png->count(); ?>],
-                                ['JPEG', <?php echo $jpeg->count(); ?>]
-
-                            ]);
-                            var options = {
-                                title: 'Activity',
-                                backgroundColor: 'transparent',
-                                is3D: true,
-                                pieSliceText: "none"
-                            };
-                            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-                            chart.draw(data, options);
-                        }
-                    </script>
-                    <!-- JS API-->
+                <section>
+                    <h3>Actions</h3>
+                    <br>
+                    <a href="{{route('new_grad')}}" class="button special icon fa-male">New user</a>
+                    <br><br>
+                    <a href="" class="button special icon fa-book">Records</a>
 
                 </section>
             </section>
-
         </div>
     </div>
 </div>

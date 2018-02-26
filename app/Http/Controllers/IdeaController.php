@@ -20,10 +20,8 @@ class IdeaController extends Controller
             $data->move('ideas/' . ucfirst(Auth::user()->name), $name);
             Idea::create(['user_id' => Auth::user()->id, 'file' => $name, 'size' => $size, 'type' => $type, 'path'=>'ideas/'. ucfirst(Auth::user()->name).'/'.$name]);
             Session::flash('info_message', 'Your files will be reviewed soon. American Airlines will be in touch.');
-        } else if($type == 'docx' || $type == 'xlxs' || $type == 'txt' || $type == 'ppt' || $type == 'pdf') {
-
+        } else if($type == 'docx' || $type == 'xlxs' || $type == 'txt' || $type == 'ppt' || $type == 'pdf' || $type == 'pptx') {
             $data->move('ideas/'. ucfirst(Auth::user()->name), $name);
-
             Idea::create(['user_id'=> Auth::user()->id, 'file'=> $name, 'size'=> $size, 'type'=> $type, 'path'=>'ideas/'. ucfirst(Auth::user()->name).'/'.$name]);
             Session::flash('info_message', 'Your files will be reviewed soon. American Airlines will be in touch.');
         } else {

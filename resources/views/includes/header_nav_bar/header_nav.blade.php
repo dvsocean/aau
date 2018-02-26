@@ -2,6 +2,9 @@
     <h1><a href="{{route('homePage')}}"><!--PLACEHOLDER--></a></h1>
     <nav id="nav">
         <ul>
+            @if(Auth::check() and Auth::user()->administrator)
+                <li><a href="{{route('admin')}}">Administrators</a></li>
+            @endif
 
             @if (Route::has('login'))
                 @auth

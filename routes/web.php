@@ -11,6 +11,9 @@
 |
 */
 
+use App\Idea;
+use Illuminate\Support\Facades\Session;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -73,3 +76,11 @@ Route::get('/administrators', function(){
         return redirect('home');
     }
 })->name('admin');
+
+//Delete from database route
+Route::get('/delete_file/{id}', function($id){
+    $idea = Idea::find($id);
+    Session::flash('info_message', $idea->file . ' was successfully destroyed.');
+    Idea::destroy($id);
+    return redirect('/administrators');
+});
